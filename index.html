@@ -1,15 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>to do list</title>
-</head>
-<body>
-    <h1>To Do List</h1>
-    <input id="box" type="text" placeholder="Add new task">
-    <button>Add task</button>
+  </head>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: bisque;
+      font-family: "Courier Newli", Courier, monospace;
+    }
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+    #box {
+      height: 2rem;
+      width: 12rem;
+    }
+    button {
+      height: 2.3rem;
+    }
+    h1 {
+      color: #0505c7;
+    }
+    ul li {
+      list-style: none;
+      margin-top: 5px;
+      min-width: 16rem;
+      padding-right: 15px;
+      background-color: #2fd29ed9;
+
+      border-radius: 10px;
+    }
+    ul li div {
+      display: flex;
+      align-items: center;
+    }
+    ul li div button {
+      margin: 0.4rem;
+      width: 3rem;
+      border-radius: 10px;
+    }
+    ul li div p {
+      font-size: 17px;
+      font-weight: bold;
+    }
+
+  </style>
+  <body>
+    <main class="top">
+        <h1>To Do List</h1>
+        <div>
+          <input id="box" type="text" placeholder="Add new task" />
+          <button>Add task</button>
+        </div>
+    </main>
+    <!-- <script src="./jquary.js"></script> -->
+    <script src=
+    "/node_modules/particles.js/particles.js">
+</script>
+<script src=
+    "/node_modules/particles.js/demo/js/app.js">
+</script>
     <script src="./index.js"></script>
-</body>
+  </body>
 </html>

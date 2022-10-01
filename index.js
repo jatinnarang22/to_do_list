@@ -1,31 +1,25 @@
+let main = document.querySelector("main");
 let input = document.querySelector("input");
 let btn = document.querySelector("button");
 let list = document.createElement("ul");
-document.body.appendChild(list);
+main.appendChild(list);
 // -------------------------------------------------style-------------------------------
-var style={
-    // display:'flex',
-    // backgroundColor:'#2fd29ed9',
-    display: 'flex',
-    backgroundColor:'#2fd29ed9',
-    borderradius: '7px',
-    width: '43vw',
-    height: '7vh',
+// var style = {
+//   // display:'flex',
+//   // backgroundColor:'#2fd29ed9',
+//   display: "flex",
+//   // backgroundColor: "#2fd29ed9",
+//   borderradius: "7px",
+//   width: "43vw",
+//   height: "7vh",
+//   alignItems: "center",
+// };
 
-}
-var listyle={
-  borderradius:'50% ',
-}
-function addlistyle(element,style){
-  for(id in style){
-    element.style[id]=style[id];
-  }
-}
-function addStyle(element,style){
-    for(id in style){
-        element.style[id]=style[id];
-    }
-}
+// function addStyle(element, style) {
+//   for (id in style) {
+//     element.style[id] = style[id];
+//   }
+// }
 // -------------------------------------------------style-------------------------------
 
 btn.addEventListener("click", function () {
@@ -37,26 +31,37 @@ btn.addEventListener("click", function () {
   let up = document.createElement("button");
   let down = document.createElement("button");
   let val = document.createElement("p");
-  cross.innerText='X';
-  up.innerText='up';
-  down.innerText='down';
-  val.innerText=input.value;
+  cross.innerText = "X";
+  cross.style.background = "#d60202";
+  up.innerText = "up";
+  up.style.background = "#089cdc";
+  down.innerText = "down";
+  down.style.background = "#cbcb01";
+  val.innerText = input.value;
   div.appendChild(cross);
   div.appendChild(up);
   div.appendChild(down);
   div.appendChild(val);
-  addStyle(div,style);
-
-  li.style.marginBottom="5px";
-//   div.style.display = "flex";
-//   div.style.backgroundColor = "green";
+  // addStyle(div, style);
+  //   div.style.display = "flex";
+  //   div.style.backgroundColor = "green";
   li.appendChild(div);
-  list.appendChild(li);
-  list
-  {
-    li.style.listStyleType='none';
-    addlistyle(li,listyle);
-  }
-  list.style.display="flex";
+  if(val.innerHTML!="")
+   list.appendChild(li);
+  else
+  alert("You have to type something before pressing ")
   input.value = "";
+
+  cross.addEventListener("click", function () {
+    li.remove();
+  });
+  down.addEventListener("click", function () {
+    let l1 = li.nextSibling;
+    if (l1) list.insertBefore(l1, li);
+  });
+
+  up.addEventListener("click", function () {
+    let l1 = li.previousSibling;
+    if (l1) list.insertBefore(li, l1);
+  });
 });
